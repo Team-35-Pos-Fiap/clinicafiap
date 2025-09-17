@@ -1,0 +1,15 @@
+[submodule "clinicafiap-usuarios"]
+	path = clinicafiap-usuarios
+	url = https://github.com/Team-35-Pos-Fiap/clinicafiap-usuarios.git
+[submodule "clinicafiap-consultas"]
+	path = clinicafiap-consultas
+	url = https://github.com/Team-35-Pos-Fiap/clinicafiap-consultas.git
+[submodule "clinicafiap-controle-servicos"]
+	path = clinicafiap-controle-servicos
+	url = https://github.com/Team-35-Pos-Fiap/clinicafiap-controle-servicos.git
+[submodule "clinicafiap-gateway"]
+	path = clinicafiap-gateway
+	url = https://github.com/Team-35-Pos-Fiap/clinicafiap-gateway.git
+[submodule "clinica-fiap-notificacao-consumer"]
+	path = clinica-fiap-notificacao-consumer
+	url = https://github.com/Team-35-Pos-Fiap/clinica-fiap-notificacao-consumer.git
