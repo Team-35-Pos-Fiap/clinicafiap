@@ -11,8 +11,18 @@
 	<groupId>br.com</groupId>
 	<artifactId>clinicafiap</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
 	<name>clinicafiap</name>
 	<description>Tech Challenge - Projeto responsável por possuir as configurações do docker para realizar o build e o deploy dos outros micro serviços.</description>
+
+	<modules>
+		<module>clinicafiap-usuarios</module>
+		<module>clinicafiap-consultas</module>
+		<module>clinicafiap-controle-servicos</module>
+		<module>clinicafiap-gateway</module>
+		<module>clinica-fiap-notificacao-consumer</module>
+	</modules>
 
 	<properties>
 		<java.version>21</java.version>
