@@ -1,0 +1,800 @@
+{
+	"info": {
+		"_postman_id": "8c3c4ac5-67e0-4fc3-bdb4-843c306c400b",
+		"name": "Clinica Fiap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40793202"
+	},
+	"item": [
+		{
+			"name": "usuario-service",
+			"item": [
+				{
+					"name": "POST - Criar Usuario (enfermeiro)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let json = pm.response.json();",
+									"",
+									"// Ajuste a chave conforme o formato do seu retorno",
+									"let id = json.id;",
+									"",
+									"if (id) {",
+									"    pm.collectionVariables.set(\"enfermeiro\", id);",
+									"    console.log(\"ID enfermeiro salvo no ambiente:\", id);",
+									"} else {",
+									"    console.warn(\"Nenhum id encontrado na resposta.\");",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Thais Martins\",\n    \"email\": \"thais@gmail.com\",\n    \"senha\": \"123456\",\n    \"perfil\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/usuarios",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Criar Usuario (medico)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let json = pm.response.json();",
+									"",
+									"// Ajuste a chave conforme o formato do seu retorno",
+									"let id = json.id;",
+									"",
+									"if (id) {",
+									"    pm.collectionVariables.set(\"medico\", id);",
+									"    console.log(\"ID medico salvo no ambiente:\", id);",
+									"} else {",
+									"    console.warn(\"Nenhum id encontrado na resposta.\");",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Arthur Martins\",\n    \"email\": \"arthur@gmail.com\",\n    \"senha\": \"123456\",\n    \"perfil\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/usuarios",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Criar Usuario (paciente)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let json = pm.response.json();",
+									"",
+									"// Ajuste a chave conforme o formato do seu retorno",
+									"let id = json.id;",
+									"",
+									"if (id) {",
+									"    pm.collectionVariables.set(\"paciente\", id);",
+									"    console.log(\"ID paciente salvo no ambiente:\", id);",
+									"} else {",
+									"    console.warn(\"Nenhum id encontrado na resposta.\");",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Theo Martins\",\n    \"email\": \"theos@gmail.com\",\n    \"senha\": \"123456\",\n    \"perfil\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/usuarios",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Autenticação",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let json = pm.response.json();",
+									"",
+									"// Ajuste a chave conforme o formato do seu retorno",
+									"let token = json.token;",
+									"",
+									"if (token) {",
+									"    pm.collectionVariables.set(\"token\", token);",
+									"    console.log(\"Token salvo no ambiente:\", token);",
+									"} else {",
+									"    console.warn(\"Nenhum token encontrado na resposta.\");",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"thais@gmail.com\",\n    \"senha\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/auth/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Buscar por id perfil",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/usuarios/perfil/3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"usuarios",
+								"perfil",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Buscar por id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/usuarios/{{paciente}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"usuarios",
+								"{{paciente}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Chave publica",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/auth/.well-known/jwks.json",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"auth",
+								".well-known",
+								"jwks.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Buscar todos perfis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/perfis",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"perfis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Inativar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/usuarios/{{paciente}}/status/inativa",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"usuarios",
+								"{{paciente}}",
+								"status",
+								"inativa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Reativar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/usuarios/{{paciente}}/status/reativa",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"usuarios",
+								"{{paciente}}",
+								"status",
+								"reativa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Alterar nome usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Theo Mezaonik\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/usuarios/{{paciente}}/nome",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"usuarios",
+								"{{paciente}}",
+								"nome"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Alterar email usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"theo@outlook.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/usuarios/{{paciente}}/email",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"usuarios",
+								"{{paciente}}",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Alterar senha usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"senha\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios-service/usuarios/{{paciente}}/senha",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios-service",
+								"usuarios",
+								"{{paciente}}",
+								"senha"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "consultas-service",
+			"item": [
+				{
+					"name": "POST - Agendar consulta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idMedico\": \"{{medico}}\",\n    \"idPaciente\": \"{{paciente}}\",\n    \"idUsuarioCriacao\": \"{{enfermeiro}}\",\n    \"dataConsulta\": \"30/09/2025 15:45\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/consultas-service/consultas",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"consultas-service",
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Buscar consultas por id do medico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/consultas-service/consultas/medicos/{{medico}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"consultas-service",
+								"consultas",
+								"medicos",
+								"{{medico}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Buscar consultas por id do paciente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/consultas-service/consultas/pacientes/{{paciente}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"consultas-service",
+								"consultas",
+								"pacientes",
+								"{{paciente}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Buscar consultas por id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/consultas-service/consultas/6528fab3-a54b-4ece-9aea-ed6cd779666b",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"consultas-service",
+								"consultas",
+								"6528fab3-a54b-4ece-9aea-ed6cd779666b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Buscar consultas por periodo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dataInicio\": \"29/09/2025 15:45\",\n    \"dataFim\": \"01/10/2025 15:45\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/consultas-service/consultas/periodo",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"consultas-service",
+								"consultas",
+								"periodo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Atualizar data da consulta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dataConsulta\": \"01/10/2025 15:45\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/consultas-service/consultas/6528fab3-a54b-4ece-9aea-ed6cd779666b",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"consultas-service",
+								"consultas",
+								"6528fab3-a54b-4ece-9aea-ed6cd779666b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH - Cancelar consulta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idUsuarioCancelamento\": \"{{paciente}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/consultas-service/consultas/e695c2a3-eeee-43f4-a1fb-248b4ffe6771/cancelamento",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"consultas-service",
+								"consultas",
+								"e695c2a3-eeee-43f4-a1fb-248b4ffe6771",
+								"cancelamento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "enfermeiro",
+			"value": ""
+		},
+		{
+			"key": "medico",
+			"value": ""
+		},
+		{
+			"key": "paciente",
+			"value": ""
+		}
+	]
+}
